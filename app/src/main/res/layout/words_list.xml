@@ -19,7 +19,7 @@
                 android:id="@+id/tv_words"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Title"
+                android:text="Titl"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
