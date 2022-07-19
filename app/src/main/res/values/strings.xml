@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Obligation</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="bot_create">Создать документ</string>
+    <string name="create">Создать</string>
+    <string name="city">Город:</string>
+    <string name="borrower">Заёмщик:</string>
+    <string name="lender">Заимодавец:</string>
+    <string name="loan_city">Москва</string>
+    <string name="fullName">Фамилия Имя Отчество</string>
+    <string name="loan_amount">Сумма займа:</string>
+    <string name="sum">Сумма</string>
+    <string name="data_of_refund">Дата возмещения:</string>
+    <string name="data">__.__.____ г.</string>
+    <string name="title_activity_new_file">NewFileActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
