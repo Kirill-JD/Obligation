@@ -2,7 +2,12 @@
     <string name="app_name">Obligation</string>
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
+    <string name="password">Password</string>
+    <string name="login">Войти</string>
+    <string name="register">Создать пароль</string>
     <string name="bot_create">Создать документ</string>
+    <string name="bot_change_password">Изменить пароль</string>
+    <string name="bot_exit">Выйти</string>
     <string name="create">Создать</string>
     <string name="city">Город:</string>
     <string name="borrower">Заёмщик:</string>
@@ -14,7 +19,8 @@
     <string name="data_of_refund">Дата возмещения:</string>
     <string name="data">__.__.____ г.</string>
     <string name="title_activity_new_file">NewFileActivity</string>
-    <!-- Strings used for fragments for navigation -->
+    <string name="title_activity_authorization">Authorization</string>
+    <string name="title_activity_registration">Registration</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>

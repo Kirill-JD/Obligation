@@ -71,7 +71,6 @@ public class HomeFragment extends Fragment {
     private void updateRecycler(List<Word> words) {
         binding.rvHome.setHasFixedSize(true);
         binding.rvHome.setLayoutManager(new StaggeredGridLayoutManager(1,LinearLayoutManager.VERTICAL));
-        //binding.rvHome.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
         wordsListAdapter = new WordsListAdapter(getActivity(), words, wordsClickListener);
         binding.rvHome.setAdapter(wordsListAdapter);
     }

@@ -25,13 +25,13 @@ public class NewFileActivity extends AppCompatActivity {
     private FileService fileService;
     private SharedPreferences sharedPreferences;
 
-    EditText etCity;
-    EditText etFullNameBorrower;
-    EditText etFullNameLender;
-    EditText etAmount;
-    EditText etDay;
-    Button newButton;
-    Word word;
+    private EditText etCity;
+    private EditText etFullNameBorrower;
+    private EditText etFullNameLender;
+    private EditText etAmount;
+    private EditText etDay;
+    private Button newButton;
+    private Word word;
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityNewFileBinding binding;
