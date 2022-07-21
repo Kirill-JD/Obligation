@@ -1,4 +1,4 @@
-package com.example.obligation.dataBase;
+package com.example.obligation.dataBase.wordDAO;
 
 import static androidx.room.OnConflictStrategy.REPLACE;
 

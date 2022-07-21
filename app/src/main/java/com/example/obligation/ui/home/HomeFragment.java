@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.example.obligation.NewFileActivity;
 import com.example.obligation.WordsClickListener;
 import com.example.obligation.adapter.WordsListAdapter;
-import com.example.obligation.dataBase.RoomDB;
+import com.example.obligation.dataBase.wordDAO.RoomDB;
 import com.example.obligation.databinding.FragmentHomeBinding;
 import com.example.obligation.domain.Word;
 

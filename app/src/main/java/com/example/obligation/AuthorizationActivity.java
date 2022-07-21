@@ -9,7 +9,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.obligation.dataBase.userDAO.UserDB;
 import com.example.obligation.databinding.ActivityAuthorizationBinding;
+import com.example.obligation.service.Security;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 
 public class AuthorizationActivity extends AppCompatActivity {
 
@@ -33,8 +39,24 @@ public class AuthorizationActivity extends AppCompatActivity {
         buttonAuthorization.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AuthorizationActivity.this, MainActivity.class);
-                startActivity(intent);
+                try {
+                    if (Security.SHA1(etInPassword.getText().toString()).equals(UserDB.getInstance(binding.getRoot().getContext()).userDAO().getPassword())) {
+                        Intent intent = new Intent(AuthorizationActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        if (etInPassword.getText().toString().isEmpty()) {
+                            Snackbar.make(binding.getRoot(), "Введите пароль", Snackbar.LENGTH_LONG).show();
+                        } else {
+                            Snackbar.make(binding.getRoot(), "Не вырный пароль", Snackbar.LENGTH_LONG).show();
+                            etInPassword.getText().clear();
+                        }
+                        return;
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -45,5 +67,8 @@ public class AuthorizationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
     }
 }

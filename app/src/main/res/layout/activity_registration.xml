@@ -32,7 +32,7 @@
             android:ems="10"
             android:layout_gravity="center"
             android:hint="@string/password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             />
 
         <Button
