@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.obligation.AuthorizationActivity;
+import com.example.obligation.ChangePasswordActivity;
 import com.example.obligation.databinding.FragmentProfileBinding;
 
 public class ProfileFragment extends Fragment {
@@ -24,6 +25,14 @@ public class ProfileFragment extends Fragment {
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
+
+        binding.buttonChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ChangePasswordActivity.class);
+                startActivity(intent);
+            }
+        });
 
         binding.buttonExit.setOnClickListener(new View.OnClickListener() {
             @Override

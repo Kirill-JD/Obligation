@@ -1,5 +1,6 @@
 package com.example.obligation.ui.home;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -27,7 +27,6 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
     private WordsListAdapter wordsListAdapter;
     private RoomDB database;
@@ -36,7 +35,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         database = RoomDB.getInstance(getActivity());
@@ -44,19 +43,16 @@ public class HomeFragment extends Fragment {
 
         updateRecycler(words);
 
-        binding.buttonCreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), NewFileActivity.class);
-                startActivityForResult(intent, 101);
-            }
+        binding.buttonCreate.setOnClickListener(view -> {
+            Intent intent = new Intent(getContext(), NewFileActivity.class);
+            startActivityForResult(intent, 101);
         });
-        View root = binding.getRoot();
-        return root;
+        return binding.getRoot();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 101 && resultCode == Activity.RESULT_OK) {

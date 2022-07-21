@@ -2,7 +2,6 @@ package com.example.obligation.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -37,18 +36,10 @@ public class WordsListAdapter extends RecyclerView.Adapter<WordsListHolder> {
     public void onBindViewHolder(@NonNull WordsListHolder holder, int position) {
         holder.textView.setText(list.get(position).getNameFile());
 
-        holder.wordsList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.onClick(list.get(holder.getAdapterPosition()));
-            }
-        });
-        holder.wordsList.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                listener.onLongClick(list.get(holder.getAdapterPosition()), holder.wordsList);
-                return true;
-            }
+        holder.wordsList.setOnClickListener(view -> listener.onClick(list.get(holder.getAdapterPosition())));
+        holder.wordsList.setOnLongClickListener(view -> {
+            listener.onLongClick(list.get(holder.getAdapterPosition()), holder.wordsList);
+            return true;
         });
     }
 

@@ -11,7 +11,6 @@ import org.apache.poi.hwpf.usermodel.Section;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -22,19 +21,19 @@ public class FileService {
         POIFSFileSystem fs = new POIFSFileSystem(inputStream);
         HWPFDocument document = new HWPFDocument(fs);
 
-        document = replaceText(document, "$City", receiptLite.getCity());
-        document = replaceText(document, "$DataToday", receiptLite.getToday());
-        document = replaceText(document, "$FullNameBorrower", receiptLite.getFullNameBorrower());
-        document = replaceText(document, "$FullNameLender", receiptLite.getFullNameLender());
-        document = replaceText(document, "$Amount", receiptLite.getAmount().toString());
-        document = replaceText(document, "$AmountText", receiptLite.getAmountText());
-        document = replaceText(document, "$Day", receiptLite.getDay());
-        document = replaceText(document, "$Today", receiptLite.getToday());
+        replaceText(document, "$City", receiptLite.getCity());
+        replaceText(document, "$DataToday", receiptLite.getToday());
+        replaceText(document, "$FullNameBorrower", receiptLite.getFullNameBorrower());
+        replaceText(document, "$FullNameLender", receiptLite.getFullNameLender());
+        replaceText(document, "$Amount", receiptLite.getAmount().toString());
+        replaceText(document, "$AmountText", receiptLite.getAmountText());
+        replaceText(document, "$Day", receiptLite.getDay());
+        replaceText(document, "$Today", receiptLite.getToday());
 
         return createWord("raspiska_" + receiptLite.getFullNameBorrower() + "_" + receiptLite.getToday() + ".doc", document);
     }
 
-    private HWPFDocument replaceText(HWPFDocument document, String findText, String replaceText) {
+    private void replaceText(HWPFDocument document, String findText, String replaceText) {
         Range range = document.getRange();
 
         for (int i = 0; i < range.numSections(); ++i ) {
@@ -50,7 +49,6 @@ public class FileService {
                 }
             }
         }
-        return document;
     }
     private Word createWord(String fileName, HWPFDocument document) throws IOException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();

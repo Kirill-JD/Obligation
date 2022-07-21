@@ -1,9 +1,5 @@
 package com.example.obligation.domain;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
 import com.ibm.icu.text.RuleBasedNumberFormat;
 
 import java.time.LocalDate;
@@ -19,7 +15,6 @@ public class ReceiptLite {
     private String amountText;
     private String day;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public ReceiptLite(String city, String fullNameBorrower, String fullNameLender, Double amount, String day) {
         this.city = city;
         this.today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));

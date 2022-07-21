@@ -12,7 +12,7 @@ import com.example.obligation.domain.User;
 public abstract class UserDB extends RoomDatabase {
 
     private static UserDB database;
-    private static String DATABASE_NAME = "UserApp";
+    private static final String DATABASE_NAME = "UserApp";
 
     public synchronized static UserDB getInstance(Context context) {
         if (database == null) {

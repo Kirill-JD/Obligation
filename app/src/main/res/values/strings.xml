@@ -7,6 +7,10 @@
     <string name="register">Создать пароль</string>
     <string name="bot_create">Создать документ</string>
     <string name="bot_change_password">Изменить пароль</string>
+    <string name="current_password">Текущий пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="repeat_new_password">Повторите новый пароль</string>
+    <string name="save_password">Сохранить</string>
     <string name="bot_exit">Выйти</string>
     <string name="create">Создать</string>
     <string name="city">Город:</string>

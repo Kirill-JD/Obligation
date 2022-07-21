@@ -12,6 +12,9 @@ public interface UserDAO {
     @Insert
     void insert (User user);
 
+    @Query("UPDATE usr SET password = :password WHERE login = :login")
+    void update (String login, String password);
+
     @Query("SELECT login FROM usr")
     String getLogin();
 
